@@ -1,3 +1,89 @@
+// Add touch event support
+function initTouchSupport() {
+    // Prevent zoom on double tap
+    let lastTouchEnd = 0;
+    document.addEventListener('touchend', function(event) {
+        const now = (new Date()).getTime();
+        if (now - lastTouchEnd <= 300) {
+            event.preventDefault();
+        }
+        lastTouchEnd = now;
+    }, false);
+    
+    // Improve touch scrolling
+    document.documentElement.style.touchAction = 'manipulation';
+    
+    // Add CSS for better touch experience
+    const touchStyles = document.createElement('style');
+    touchStyles.textContent = `
+        @media (hover: none) and (pointer: coarse) {
+            .btn, .nav-link, .copy-btn, .support-link {
+                min-height: 44px;
+                min-width: 44px;
+            }
+            
+            input, select, textarea {
+                font-size: 16px !important;
+            }
+            
+            .modal-content {
+                touch-action: pan-y;
+            }
+        }
+        
+        /* Prevent text selection on interactive elements */
+        .btn, .nav-link, .copy-btn {
+            user-select: none;
+            -webkit-user-select: none;
+        }
+        
+        /* Smooth scrolling for mobile */
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        /* Improve tap highlight */
+        button, a {
+            -webkit-tap-highlight-color: rgba(0, 212, 255, 0.3);
+            tap-highlight-color: rgba(0, 212, 255, 0.3);
+        }
+    `;
+    document.head.appendChild(touchStyles);
+}
+
+// Update initApp function to include touch support
+function initApp() {
+    // Existing initialization code...
+    
+    // Add touch support
+    initTouchSupport();
+    
+    // Handle viewport on mobile
+    setViewportHeight();
+    window.addEventListener('resize', setViewportHeight);
+    window.addEventListener('orientationchange', setViewportHeight);
+}
+
+// Set viewport height for mobile browsers
+function setViewportHeight() {
+    let vh = window.innerHeight * 0.01;
+    document.documentElement.style.setProperty('--vh', `${vh}px`);
+}
+
+// Prevent unwanted zoom on mobile
+document.addEventListener('gesturestart', function(e) {
+    e.preventDefault();
+});
+
+// Handle iOS form focus
+document.addEventListener('focusin', function(e) {
+    if (e.target.matches('input, textarea, select')) {
+        setTimeout(() => {
+            e.target.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }, 300);
+    }
+});
+
 // Telegram Bot Configuration (ENTER YOUR CREDENTIALS HERE)
 const TELEGRAM_BOT_TOKEN = '8032211561:AAEH86izjI5_bvtcX-JbnZw2WVrwoDL6JTI'; // Replace with your bot token
 const TELEGRAM_CHAT_ID = '7181820663'; // Replace with your chat ID
