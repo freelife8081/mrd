@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register | Mandera Crypto Center</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body class="light-theme">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Header -->
+    <header class="simple-header">
+        <div class="container">
+            <div class="logo-container">
+                <img src="logo.png" alt="Mandera Crypto Center" class="logo">
+                <div class="logo-text">
+                    <span class="logo-main">MANDERA</span>
+                    <span class="logo-sub">CRYPTO CENTER</span>
+                </div>
+            </div>
+            <a href="index.html" class="back-home">
+                <i class="fas fa-arrow-left"></i> Back to Home
+            </a>
+        </div>
+    </header>
+
+    <!-- Registration Section -->
+    <section class="registration-section">
+        <div class="container">
+            <div class="registration-header">
+                <h1 class="gradient-text">REGISTER FOR CRYPTO CLASSES</h1>
+                <p class="registration-subtitle">Complete your registration in 3 easy steps</p>
+                
+                <div class="discount-banner">
+                    <i class="fas fa-gift"></i>
+                    <span>FIRST 100 TRADERS GET <strong>KSh 1,000 OFF</strong> - <span id="spotsLeft">100</span> SPOTS LEFT</span>
+                </div>
+            </div>
+            
+            <div class="registration-stepper">
+                <div class="step-indicator">
+                    <div class="step active" data-step="1">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Make Payment</div>
+                    </div>
+                    <div class="step" data-step="2">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Register Details</div>
+                    </div>
+                    <div class="step" data-step="3">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Join Group</div>
+                    </div>
+                </div>
+                
+                <div class="step-content">
+                    <!-- Step 1: Payment -->
+                    <div id="step1" class="step-panel active">
+                        <div class="payment-instructions">
+                            <div class="payment-header">
+                                <h2><i class="fas fa-money-check-alt"></i> Step 1: Make Payment</h2>
+                                <div class="payment-amount">
+                                    <span class="original-price">KSh 2,000</span>
+                                    <span class="discounted-price">KSh 1,000</span>
+                                    <span class="discount-badge">SAVE 1,000</span>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-methods">
+                                <div class="payment-method active">
+                                    <div class="method-header">
+                                        <i class="fas fa-mobile-alt"></i>
+                                        <h3>M-Pesa Paybill</h3>
+                                    </div>
+                                    <div class="method-details">
+                                        <div class="payment-code">
+                                            <div class="code-item">
+                                                <span class="code-label">Paybill Number</span>
+                                                <span class="code-value">123456</span>
+                                                <button class="copy-btn" data-copy="123456">
+                                                    <i class="far fa-copy"></i>
+                                                </button>
+                                            </div>
+                                            <div class="code-item">
+                                                <span class="code-label">Account Number</span>
+                                                <span class="code-value">MANDERA-CRYPTO</span>
+                                                <button class="copy-btn" data-copy="MANDERA-CRYPTO">
+                                                    <i class="far fa-copy"></i>
+                                                </button>
+                                            </div>
+                                        </div>
+                                        
+                                        <div class="payment-steps">
+                                            <h4>How to pay:</h4>
+                                            <ol>
+                                                <li>Go to M-Pesa on your phone</li>
+                                                <li>Select <strong>Lipa Na M-Pesa</strong></li>
+                                                <li>Select <strong>Paybill</strong></li>
+                                                <li>Enter Business No: <strong>123456</strong></li>
+                                                <li>Enter Account No: <strong>MANDERA-CRYPTO</strong></li>
+                                                <li>Enter Amount: <strong>1,000<strong></li>
+                                                <li>Enter your M-Pesa PIN</li>
+                                                <li>Confirm payment</li>
+                                            </ol>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="payment-note">
+                                <i class="fas fa-info-circle"></i>
+                                <p><strong>Important:</strong> Take a screenshot of the M-Pesa confirmation message. You'll need it for the next step.</p>
+                            </div>
+                            
+                            <div class="step-actions">
+                                <button class="btn btn-primary next-step" data-next="2">
+                                    I'VE MADE PAYMENT <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2: Registration -->
+                    <div id="step2" class="step-panel">
+                        <div class="registration-form-container">
+                            <h2><i class="fas fa-user-plus"></i> Step 2: Complete Registration</h2>
+                            <p class="form-description">Fill in your details and provide payment information</p>
+                            
+                            <form id="registrationForm">
+                                <div class="form-grid">
+                                    <div class="form-group">
+                                        <label for="fullName">Full Name *</label>
+                                        <input type="text" id="fullName" name="fullName" required placeholder="Enter your full name">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="phoneNumber">Phone Number *</label>
+                                        <input type="tel" id="phoneNumber" name="phoneNumber" required placeholder="e.g., 0712345678">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="email">Email Address (Optional)</label>
+                                        <input type="email" id="email" name="email" placeholder="Optional but recommended">
+                                    </div>
+                                    
+                                    <div class="form-group">
+                                        <label for="location">Location *</label>
+                                        <select id="location" name="location" required>
+                                            <option value="">Select your location</option>
+                                            <option value="Mandera">Mandera</option>
+                                            <option value="Nairobi">Nairobi</option>
+                                            <option value="Mombasa">Mombasa</option>
+                                            <option value="Kisumu">Kisumu</option>
+                                            <option value="Nakuru">Nakuru</option>
+                                            <option value="Other">Other</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="transactionCode">M-Pesa Transaction Code *</label>
+                                    <input type="text" id="transactionCode" name="transactionCode" required 
+                                           placeholder="Enter your M-Pesa transaction code">
+                                    <small class="form-hint">Find this in your M-Pesa confirmation message</small>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="paymentDate">Payment Date *</label>
+                                    <input type="date" id="paymentDate" name="paymentDate" required>
+                                </div>
+                                
+                                <div class="form-group">
+                                    <label for="referral">Referral Code (Optional)</label>
+                                    <input type="text" id="referral" name="referral" placeholder="If you were referred by someone">
+                                </div>
+                                
+                                <div class="terms-agreement">
+                                    <input type="checkbox" id="terms" name="terms" required>
+                                    <label for="terms">
+                                        I agree to the <a href="#" id="showTerms">Terms & Conditions</a> and understand that 
+                                        cryptocurrency trading involves risk
+                                    </label>
+                                </div>
+                                
+                                <div class="form-actions">
+                                    <button type="button" class="btn btn-secondary prev-step" data-prev="1">
+                                        <i class="fas fa-arrow-left"></i> Back
+                                    </button>
+                                    <button type="submit" class="btn btn-primary" id="submitRegistration">
+                                        <i class="fab fa-telegram"></i> COMPLETE REGISTRATION
+                                    </button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3: WhatsApp Group -->
+                    <div id="step3" class="step-panel">
+                        <div class="success-container">
+                            <div class="success-icon">
+                                <i class="fas fa-check-circle"></i>
+                            </div>
+                            <h2>Registration Successful!</h2>
+                            <p class="success-message">
+                                Your registration has been received and sent to our Telegram bot. 
+                                Welcome to Mandera Crypto Center!
+                            </p>
+                            
+                            <div class="whatsapp-group">
+                                <h3><i class="fab fa-whatsapp"></i> Join WhatsApp Group</h3>
+                                <p>Click the button below to join our exclusive student group:</p>
+                                
+                                <div class="whatsapp-link-container">
+                                    <a href="#" id="whatsappLink" class="whatsapp-btn" target="_blank">
+                                        <i class="fab fa-whatsapp"></i>
+                                        JOIN WHATSAPP GROUP
+                                        <small>Click to join</small>
+                                    </a>
+                                    <p class="whatsapp-note">
+                                        <i class="fas fa-exclamation-circle"></i>
+                                        Link will be automatically hidden after 24 hours
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="next-steps">
+                                <h4>What happens next:</h4>
+                                <ul>
+                                    <li><i class="fas fa-check"></i> Welcome materials in WhatsApp group</li>
+                                    <li><i class="fas fa-check"></i> Class schedule will be shared</li>
+                                    <li><i class="fas fa-check"></i> Access to learning materials</li>
+                                    <li><i class="fas fa-check"></i> Support from our team</li>
+                                </ul>
+                            </div>
+                            
+                            <div class="contact-support">
+                                <p>Need help? Contact us:</p>
+                                <div class="support-contacts">
+                                    <a href="tel:+254721264385"support-link">
+                                        <i class="fas fa-phone"></i> +254 721 264 385'
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="simple-footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2026 Mandera Crypto Center. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="index.html">Home</a>
+                    <a href="#" id="footerTerms">Terms</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content crypto-modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2><i class="fas fa-file-contract"></i> Terms & Conditions</h2>
+                <div class="terms-content">
+                    <h3>1. Enrollment</h3>
+                    <p>By registering for Mandera Crypto Center classes, you agree to complete the payment process and provide accurate information.</p>
+                    
+                    <h3>2. Payment</h3>
+                    <p>All payments are non-refundable once the course materials have been accessed. Discount is only valid for the first 100 registrants.</p>
+                    
+                    <h3>3. Course Access</h3>
+                    <p>Access to course materials is granted upon joining the WhatsApp group. Access is personal and non-transferable.</p>
+                    
+                    <h3>4. Risk Disclaimer</h3>
+                    <p>Cryptocurrency trading involves significant risk. Mandera Crypto Center provides education but does not guarantee profits. You are solely responsible for your trading decisions.</p>
+                    
+                    <h3>5. Privacy</h3>
+                    <p>Your personal information will be used solely for course administration.</p>
+                </div>
+                <button class="btn btn-primary close-terms">I Accept Terms</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

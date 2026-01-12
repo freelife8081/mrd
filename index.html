@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mandera Crypto Center | Master Cryptocurrency Trading</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Exo+2:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="logo.png">
+</head>
+<body class="light-theme">
+    <!-- Theme Toggle -->
+    <div class="theme-toggle">
+        <button id="themeToggle" class="theme-btn">
+            <i class="fas fa-sun"></i>
+            <i class="fas fa-moon"></i>
+        </button>
+    </div>
+
+    <!-- Discount Popup Modal -->
+    <div id="discountModal" class="modal">
+        <div class="modal-content crypto-modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-header">
+                <div class="modal-logo">
+                    <img src="logo.png" alt="MCC Logo">
+                </div>
+                <h2><span class="gradient-text">🚀 LIMITED TIME OFFER</span></h2>
+            </div>
+            <div class="modal-body">
+                <div class="offer-badge">
+                    <div class="badge-content">
+                        <span class="badge-text">EXCLUSIVE DISCOUNT</span>
+                        <span class="badge-amount">KSh 1,000 OFF</span>
+                    </div>
+                </div>
+                <p class="modal-description">First <strong>100 traders only</strong> get exclusive discount!</p>
+                <div class="counter-container">
+                    <div class="counter-display">
+                        <div class="counter-number" id="counterDisplay">100</div>
+                        <div class="counter-label">SPOTS LEFT</div>
+                    </div>
+                    <div class="counter-progress">
+                        <div class="progress-bar" id="progressBar"></div>
+                    </div>
+                    <div class="counter-note">Offer ends when counter reaches 0</div>
+                </div>
+                <div class="timer">
+                    <i class="fas fa-clock"></i>
+                    <span>Limited time offer</span>
+                </div>
+                <a href="register.html" class="btn claim-btn">
+                    <i class="fas fa-bolt"></i>
+                    CLAIM DISCOUNT NOW
+                    <i class="fas fa-arrow-right"></i>
+                </a>
+                <p class="modal-footer">*Only for first 100 registrations</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <header class="main-header">
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="logo-container">
+                    <img src="logo.png" alt="Mandera Crypto Center" class="logo">
+                    <div class="logo-text">
+                        <span class="logo-main">MANDERA</span>
+                        <span class="logo-sub">CRYPTO CENTER</span>
+                    </div>
+                </div>
+                
+                <div class="nav-menu" id="navMenu">
+                    <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+                    <a href="#curriculum" class="nav-link"><i class="fas fa-graduation-cap"></i> Curriculum</a>
+                    <a href="#benefits" class="nav-link"><i class="fas fa-chart-line"></i> Benefits</a>
+                    <a href="#testimonials" class="nav-link"><i class="fas fa-comments"></i> Testimonials</a>
+                    <a href="#contact" class="nav-link"><i class="fas fa-envelope"></i> Contact</a>
+                    <a href="register.html" class="nav-link register-nav">
+                        <i class="fas fa-user-plus"></i> Register Now
+                    </a>
+                </div>
+                
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-section">
+        <div class="hero-background">
+            <div class="crypto-particle" id="particles"></div>
+            <div class="floating-coins">
+                <i class="fab fa-bitcoin"></i>
+                <i class="fab fa-ethereum"></i>
+                <i class="fas fa-coins"></i>
+                <i class="fas fa-chart-network"></i>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span><i class="fas fa-certificate"></i> TRUSTED BY 2,500+ TRADERS</span>
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">MASTER</span>
+                    <span class="title-line gradient-text">CRYPTOCURRENCY</span>
+                    <span class="title-line">TRADING & INVESTMENT</span>
+                </h1>
+                <p class="hero-subtitle">
+                    Learn to buy, trade, and profit from cryptocurrency using local currency. 
+                    From zero to professional trader in 8 weeks.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number">98%</div>
+                        <div class="stat-label">Success Rate</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">2,500+</div>
+                        <div class="stat-label">Students Trained</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number">KSh 50M+</div>
+                        <div class="stat-label">Profits Generated</div>
+                    </div>
+                </div>
+                
+                <div class="hero-cta">
+                    <a href="register.html" class="btn btn-primary btn-glow">
+                        <i class="fas fa-rocket"></i>
+                        START TRADING NOW
+                        <span class="btn-subtext">Limited spots available</span>
+                    </a>
+                    <a href="#curriculum" class="btn btn-secondary">
+                        <i class="fas fa-play-circle"></i>
+                        VIEW CURRICULUM
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Curriculum Section -->
+    <section id="curriculum" class="section curriculum-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">COMPREHENSIVE <span class="gradient-text">CRYPTO CURRICULUM</span></h2>
+                <p class="section-subtitle">Everything you need to know about cryptocurrency trading</p>
+            </div>
+            
+            <div class="curriculum-grid">
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-1">
+                        <i class="fas fa-link"></i>
+                    </div>
+                    <h3>Blockchain Fundamentals</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Understanding Blockchain Technology</li>
+                        <li><i class="fas fa-check"></i> Decentralization & Consensus</li>
+                        <li><i class="fas fa-check"></i> Cryptography Basics</li>
+                        <li><i class="fas fa-check"></i> Smart Contracts</li>
+                    </ul>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-2">
+                        <i class="fas fa-wallet"></i>
+                    </div>
+                    <h3>Wallets & Security</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Hot vs Cold Wallets</li>
+                        <li><i class="fas fa-check"></i> Seed Phrase Management</li>
+                        <li><i class="fas fa-check"></i> Security Best Practices</li>
+                        <li><i class="fas fa-check"></i> Multi-Signature Wallets</li>
+                    </ul>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-3">
+                        <i class="fas fa-shopping-cart"></i>
+                    </div>
+                    <h3>Buying with Local Currency</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> M-Pesa to Crypto</li>
+                        <li><i class="fas fa-check"></i> Bank Transfer Methods</li>
+                        <li><i class="fas fa-check"></i> P2P Trading Platforms</li>
+                        <li><i class="fas fa-check"></i> Local Exchanges</li>
+                    </ul>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-4">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Trading Strategies</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Technical Analysis</li>
+                        <li><i class="fas fa-check"></i> Chart Patterns</li>
+                        <li><i class="fas fa-check"></i> Risk Management</li>
+                        <li><i class="fas fa-check"></i> Market Psychology</li>
+                    </ul>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-5">
+                        <i class="fas fa-exchange-alt"></i>
+                    </div>
+                    <h3>Crypto Exchanges</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Binance Mastery</li>
+                        <li><i class="fas fa-check"></i> Coinbase Pro</li>
+                        <li><i class="fas fa-check"></i> LocalBitcoins</li>
+                        <li><i class="fas fa-check"></i> Kucoin & Others</li>
+                    </ul>
+                </div>
+                
+                <div class="curriculum-card">
+                    <div class="card-icon crypto-6">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Security & Scams</h3>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Phishing Prevention</li>
+                        <li><i class="fas fa-check"></i> Scam Recognition</li>
+                        <li><i class="fas fa-check"></i> Tax Implications</li>
+                        <li><i class="fas fa-check"></i> Legal Compliance</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="section benefits-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">TRANSFORM YOUR <span class="gradient-text">FINANCIAL FUTURE</span></h2>
+                <p class="section-subtitle">How Mandera Crypto Center changes lives</p>
+            </div>
+            
+            <div class="benefits-container">
+                <div class="benefits-grid">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-laptop-house"></i>
+                        </div>
+                        <h4>Work From Anywhere</h4>
+                        <p>Trade cryptocurrencies from your phone or laptop, anywhere in the world.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>24/7 Markets</h4>
+                        <p>Crypto markets never sleep. Trade anytime, day or night.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-globe-africa"></i>
+                        </div>
+                        <h4>Global Opportunities</h4>
+                        <p>Access global financial markets with just an internet connection.</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <div class="benefit-icon">
+                            <i class="fas fa-user-friends"></i>
+                        </div>
+                        <h4>Community Support</h4>
+                        <p>Join our exclusive WhatsApp group for ongoing support and signals.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section id="testimonials" class="section testimonials-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">SUCCESS <span class="gradient-text">STORIES</span></h2>
+                <p class="section-subtitle">What our students say about us</p>
+            </div>
+            
+            <div class="testimonials-slider">
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "I went from knowing nothing about crypto to making consistent profits. The local currency buying guide was a game-changer!"
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">JM</div>
+                            <div class="author-info">
+                                <h4>James Mwangi</h4>
+                                <p>Student | 4 Months</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "The risk management module saved me from major losses. Now I trade confidently with clear strategies."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">AK</div>
+                            <div class="author-info">
+                                <h4>Aisha Khalif</h4>
+                                <p>Full-time Trader</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="testimonial-card">
+                    <div class="testimonial-content">
+                        <div class="testimonial-text">
+                            "Best investment I ever made. The course paid for itself in the first month of trading."
+                        </div>
+                        <div class="testimonial-author">
+                            <div class="author-avatar">PO</div>
+                            <div class="author-info">
+                                <h4>Peter Omondi</h4>
+                                <p>Business Owner</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2 class="section-title">MESSAGE <span class="gradient-text">US</span></h2>
+                <p class="section-subtitle">Send message directly to us</p> </div>
+
+            <div class="contact-form-container">
+                <form id="contactForm" class="contact-form">
+                    <div class="form-group">
+                        <label for="contactName">Full Name *</label>
+                        <input type="text" id="contactName" name="name" required placeholder="Enter your full name">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactPhone">Phone Number *</label>
+                        <input type="tel" id="contactPhone" name="phone" required placeholder="e.g., 0712345678">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactEmail">Email Address (Optional)</label>
+                        <input type="email" id="contactEmail" name="email" placeholder="your@email.com">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactSubject">Subject *</label>
+                        <select id="contactSubject" name="subject" required>
+                            <option value="">Select subject</option>
+                            <option value="course_info">Course Information</option>
+                            <option value="payment_issue">Payment Issue</option>
+                            <option value="registration_help">Registration Help</option>
+                            <option value="technical_support">Technical Support</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="contactMessage">Your Message *</label>
+                        <textarea id="contactMessage" name="message" rows="5" required placeholder="Type your message here..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary" id="sendMessageBtn">
+                        <i class="fab fa-telegram"></i>
+                        Submit Message
+                    </button>
+                    
+                    <div id="contactResponse" class="response-message"></div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="main-footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo">
+                    <img src="logo.png" alt="MCC Logo">
+                    <div class="footer-logo-text">
+                        <h3>MANDERA CRYPTO CENTER</h3>
+                        <p>Your Gateway to Financial Freedom</p>
+                    </div>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>Quick Links</h4>
+                        <a href="#home">Home</a>
+                        <a href="#curriculum">Curriculum</a>
+                        <a href="#benefits">Benefits</a>
+                        <a href="#contact">Contact</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Legal</h4>
+                        <a href="#" id="footerTerms">Terms & Conditions</a>
+                        <a href="#" id="footerDisclaimer">Risk Disclaimer</a>
+                    </div>
+                    
+                    <div class="footer-column">
+                        <h4>Contact</h4>
+                        <a href="tel:+254721264385">+254 721 264 385</a>
+                        <a href="register.html">Register Now</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2026Mandera Crypto Center. All rights reserved. Cryptocurrency trading involves substantial risk of loss.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Telegram Config Modal -->
+    <div id="configModal" class="modal">
+        <div class="modal-content crypto-modal">
+            <span class="close-modal">&times;</span>
+            <h3><i class="fab fa-telegram"></i> Telegram Bot Configuration</h3>
+            <div class="config-form">
+                <p>Enter your Telegram bot credentials:</p>
+                <div class="form-group">
+                    <label>Bot Token</label>
+                    <input type="text" id="botToken" placeholder="Enter your bot token">
+                </div>
+                <div class="form-group">
+                    <label>Chat ID</label>
+                    <input type="text" id="chatId" placeholder="Enter your chat ID">
+                </div>
+                <button id="saveConfig" class="btn btn-primary">Save Configuration</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Terms Modal -->
+    <div id="termsModal" class="modal">
+        <div class="modal-content crypto-modal">
+            <span class="close-modal">&times;</span>
+            <div class="modal-body">
+                <h2><i class="fas fa-file-contract"></i> Terms & Conditions</h2>
+                <div class="terms-content">
+                    <h3>1. Enrollment</h3>
+                    <p>By registering for Mandera Crypto Center classes, you agree to complete the payment process and provide accurate information.</p>
+                    
+                    <h3>2. Payment</h3>
+                    <p>All payments are non-refundable. Discount is only valid for the first 100 registrants.</p>
+                    
+                    <h3>3. Course Access</h3>
+                    <p>Access to course materials is granted upon joining the WhatsApp group. Access is personal and non-transferable.</p>
+                    
+                    <h3>4. Risk Disclaimer</h3>
+                    <p>Cryptocurrency trading involves significant risk. We provide education but do not guarantee profits.</p>
+                    
+                    <h3>5. Privacy</h3>
+                    <p>Your information is used solely for course administration.</p>
+                </div>
+                <button class="btn btn-primary close-terms">I Understand</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
